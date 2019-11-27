@@ -1,0 +1,60 @@
+<div class="jumbotron">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 offset-md-2">
+          <h3>Angular 7 Reactive Form Validation</h3>
+          <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label >First Name</label>
+              <input type="text" class="form-control" formControlName="firstName"   [ngClass]="{'is-invalid':submitted && f.firstName.errors}"  />
+              <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                  <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                  <div *ngIf="f.firstName.errors.minlength">Minimum length is 6</div>
+                </div>
+                
+            </div>
+
+
+ 
+            <div class="form-group">
+                <label >last Name</label>
+                <input type="text" class="form-control" formControlName="lastName"   [ngClass]="{'is-invalid':submitted && f.lastName.errors}"  />
+                <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                    <div *ngIf="f.lastName.errors.required">First Name is required</div>
+                    <div *ngIf="f.lastName.errors.minlength">Minimum length is 6</div>
+                  </div>
+                  
+              </div>
+
+
+              <div class="form-group">
+                  <label >Email</label>
+                  <input type="text" class="form-control" formControlName="email"   [ngClass]="{'is-invalid':submitted && f.email.errors}"  />
+                  <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                      <div *ngIf="f.email.errors.required">First Name is required</div>
+                      <div *ngIf="f.email.errors.minlength">Minimum length is 6</div>
+                    </div>
+                    
+                </div>
+
+           
+                <div class="form-group">
+                    <label >Password</label>
+                    <input type="text" class="form-control" formControlName="password"   [ngClass]="{'is-invalid':submitted && f.password.errors}"  />
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">First Name is required</div>
+                        <div *ngIf="f.password.errors.minlength">Minimum length is 6</div>
+                      </div>
+                      
+                  </div>
+
+
+            <div class="form-group">
+              <button class="btn btn-primary">Register</button>
+            </div>
+  
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
